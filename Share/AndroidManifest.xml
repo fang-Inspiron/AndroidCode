@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.share"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Welcome"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Login"/>
+        <activity android:name=".Register"/>
+        <activity android:name=".HomeActivity1"/>
+        <activity android:name=".UploadActivity"/>
+        <activity android:name=".InformationActivity"/>
+        <activity android:name=".RecommendActivity"/>
+        <activity android:name=".NotifyActivity"/>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".MyInforNewConcern"/>
+        <activity android:name=".MyInforSixin"/>
+        <activity android:name=".MyInforDialog"/>
+        <activity android:name=".MySetBasics"/>
+        <activity android:name=".MySetAlterPswd"/>
+        <activity android:name=".MySetMessageSet"/>
+        <activity android:name=".ShangChuanActivity"/>
+    </application>
+
+</manifest>

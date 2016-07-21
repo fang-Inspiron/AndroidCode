@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="3.6" >
+    </android.support.v4.view.ViewPager>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.4"
+        android:background="@drawable/radiogroup_background"
+        android:weightSum="5"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/rbt_bottom"
+            android:background="@drawable/selector_home"/>
+
+        <RadioButton
+            android:id="@+id/rb_search"
+            style="@style/rbt_bottom"
+            android:background="@drawable/selector_search"/>
+
+        <RadioButton
+            android:id="@+id/rb_essay"
+            style="@style/rbt_bottom"
+            android:background="@drawable/selector_essay"/>
+
+        <RadioButton
+            android:id="@+id/rb_activity"
+            style="@style/rbt_bottom"
+            android:background="@drawable/selector_activity"/>
+        
+        <RadioButton
+            android:id="@+id/rb_person"
+            style="@style/rbt_bottom"
+            android:background="@drawable/selector_person"/>
+    </RadioGroup>
+
+</LinearLayout>

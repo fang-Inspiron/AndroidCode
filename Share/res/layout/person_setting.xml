@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#358fcb"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/back"
+            android:text="设置"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_basics"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MySettingLayoutOnClick"
+        android:paddingBottom="12dp" >
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:text="基本资料"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/btn_triangle1"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/person_triangle" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_alterPswd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:onClick="MySettingLayoutOnClick"
+        android:paddingBottom="12dp" >
+
+        <TextView
+            android:id="@+id/tv_alterPaswd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:text="修改密码"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/btn_triangle2"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/person_triangle" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_messageSet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:onClick="MySettingLayoutOnClick"
+        android:paddingBottom="12dp" >
+
+        <TextView
+            android:id="@+id/tv_messageSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:text="消息设置"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/btn_triangle3"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/person_triangle" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_aboutSHARE"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:onClick="MySettingLayoutOnClick"
+        android:paddingBottom="12dp" >
+
+        <TextView
+            android:id="@+id/tv_aboutSHARE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:text="关于SHARE"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/btn_triangle4"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/person_triangle" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_clearCache"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:onClick="MySettingLayoutOnClick"
+        android:paddingBottom="12dp" >
+
+        <TextView
+            android:id="@+id/tv_clearCache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:text="清除缓存"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/btn_triangle5"
+             android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/person_triangle" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff">
+        
+    </RelativeLayout>
+
+</LinearLayout>

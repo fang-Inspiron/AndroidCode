@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#358fcb"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="文章"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#5b5b5b">
+        
+        <TextView 
+            android:id="@+id/sift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+        	android:layout_marginBottom="8dp"
+            android:text="精选文章"
+            android:textSize="16dp"
+            android:textColor="#ffffff"/>
+        
+        <ImageView
+            android:id="@+id/img_essay1"
+            android:layout_width="2dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/essay_line"/>
+        
+        <TextView 
+            android:id="@+id/hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:layout_marginTop="8dp"
+        	android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="热门推荐"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+        
+        <ImageView
+            android:id="@+id/img_essay2"
+            android:layout_width="2dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/essay_line"/>
+        
+        <TextView 
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:layout_marginTop="8dp"
+        	android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="全部文章"
+            android:textSize="16sp"
+            android:textColor="#A9A9A9"/>
+    </LinearLayout>
+    
+    <ListView 
+        android:id="@+id/myList"
+        android:layout_width="match_parent"	
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:dividerHeight="5dp"
+        android:background="#ffffff"
+        android:divider="#eeeeee"
+        android:paddingBottom="5dp"/>
+
+</LinearLayout>

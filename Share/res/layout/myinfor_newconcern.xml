@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#358fcb"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/back"
+            android:text="新关注的"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp">
+        
+        <ImageView 
+            android:id="@+id/concern_img1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/concern_img1"/>
+        
+        <TextView 
+            android:id="@+id/concern_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/concern_img1"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="share小格"
+            android:textSize="15sp"/>
+        
+        <ImageView 
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:tag="1"
+            android:onClick="MyButtonOnClick"
+            android:background="@drawable/guanzhu_pressed"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:padding="10dp">
+        
+        <ImageView 
+            android:id="@+id/concern_img2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/concern_img2"/>
+        
+        <TextView 
+            android:id="@+id/concern_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/concern_img2"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="share小兰"
+            android:textSize="15sp"/>
+        
+        <ImageView 
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:tag="1"
+            android:onClick="MyButtonOnClick"
+            android:background="@drawable/guanzhu_pressed"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:padding="10dp">
+        
+        <ImageView 
+            android:id="@+id/concern_img3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/concern_img3"/>
+        
+        <TextView 
+            android:id="@+id/concern_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/concern_img3"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="share小明"
+            android:textSize="15sp"/>
+        
+        <ImageView 
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:tag="1"
+            android:onClick="MyButtonOnClick"
+            android:background="@drawable/guanzhu_pressed"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:padding="10dp">
+        
+        <ImageView 
+            android:id="@+id/concern_img4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/concern_img4"/>
+        
+        <TextView 
+            android:id="@+id/concern_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/concern_img4"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="share小雪"
+            android:textSize="15sp"/>
+        
+        <ImageView 
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:tag="1"
+            android:onClick="MyButtonOnClick"
+            android:background="@drawable/guanzhu_pressed"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:padding="10dp">
+        
+        <ImageView 
+            android:id="@+id/concern_img5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/concern_img5"/>
+        
+        <TextView 
+            android:id="@+id/concern_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/concern_img5"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="share萌萌"
+            android:textSize="15sp"/>
+        
+        <ImageView 
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:tag="0"
+            android:onClick="MyButtonOnClick"
+            android:background="@drawable/guanzhu_normal"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:padding="10dp">
+        
+        <ImageView 
+            android:id="@+id/concern_img6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/concern_img6"/>
+        
+        <TextView 
+            android:id="@+id/concern_tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/concern_img6"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="shareLity"
+            android:textSize="15sp"/>
+        
+        <ImageView 
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:tag="0"
+            android:onClick="MyButtonOnClick"
+            android:background="@drawable/guanzhu_normal"/>
+    </RelativeLayout>
+
+</LinearLayout>

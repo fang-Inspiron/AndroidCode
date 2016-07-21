@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp">
+    
+    <ImageView 
+        android:id="@+id/iv_simpleList"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/concern_img1"/>
+
+    <TextView 
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_simpleList"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:text="share小格"
+            android:textSize="15sp"/>
+    
+    <TextView 
+            android:id="@+id/tv_desp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_toRightOf="@id/iv_simpleList"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="你的作品我很喜欢！！！"
+            android:textSize="13sp"
+            android:textColor="#358fcb"/>
+    
+    <TextView 
+        	android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="11-03 09:45"
+            android:textColor="#bfbfbf"
+            android:textSize="11sp"/>
+</RelativeLayout>

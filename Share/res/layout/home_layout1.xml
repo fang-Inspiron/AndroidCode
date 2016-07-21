@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#358fcb"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="SHARE"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingBottom="10dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/imageview1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/person_img" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="60dp"
+            android:text="假日"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:layout_marginLeft="60dp"
+            android:text="share小白"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="15分钟前"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/share_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:text="20"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/imageview2"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@id/share_num"
+            android:background="@drawable/button_share"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/concern_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@id/imageview2"
+            android:text="26"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/imageview3"
+            android:layout_width="18dp"
+            android:layout_height="11dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@id/concern_num"
+            android:background="@drawable/button_guanzhu"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/zan_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@id/imageview3"
+            android:text="102"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/imageview4"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@id/zan_num"
+            android:background="@drawable/button_zan"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:padding="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多希望列车能把我带到有你的城市"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/imageview5"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/works_img1"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/imageview6"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/works_img2"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/imageview7"
+                android:layout_width="200dp"
+                android:layout_height="290dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/works_img3"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/imageview8"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/works_img4"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/imageview9"
+                android:layout_width="200dp"
+                android:layout_height="290dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/works_img5"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
