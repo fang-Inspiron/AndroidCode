@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/setting_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/back_actionbar"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/setting_back"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:text="设置"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/setting_ziliao"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="基本资料"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/my_jiantou" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/setting_xiugaimima"
+                android:layout_marginTop="2dp"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="修改密码"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/my_jiantou" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/setting_xiaoxishezhi"
+                 android:layout_marginTop="2dp"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="消息设置"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/my_jiantou" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/setting_guanyu"
+                android:layout_width="fill_parent"
+                 android:layout_marginTop="2dp"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="关于SHARE"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/my_jiantou" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/setting_qingchuhuancun"
+                 android:layout_marginTop="2dp"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="清除缓存"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/my_jiantou" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

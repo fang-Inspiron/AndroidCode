@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/action_actionbar"
+    android:layout_width="fill_parent"
+    android:layout_height="49dp"
+    android:background="@drawable/back_actionbar" >
+
+    <ImageView
+        android:id="@+id/action_back"
+        android:layout_width="25dp"
+        android:layout_height="18dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/back_img" />
+
+    <ImageView
+        android:id="@+id/action_shuangchuan"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/shangchuan" />
+
+    <TextView
+        android:id="@+id/actionbar_title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toLeftOf="@id/action_shuangchuan"
+        android:layout_toRightOf="@id/action_back"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+</RelativeLayout>

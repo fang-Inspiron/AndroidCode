@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/chat_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/back_actionbar"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/chat_back"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
+            android:textColor="#ffffff"
+            android:text="与share小兰对话"
+            android:gravity="center"
+            android:id="@+id/chat_title"
+            android:textSize="20sp" />
+    </LinearLayout>
+	<LinearLayout
+	    android:id="@+id/chat_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="2"
+            android:background="@drawable/chat_edittext_circle_style" >
+
+            <EditText
+                android:id="@+id/chat_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/chat_bt_sub"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="8"
+            android:background="@drawable/send_background"
+            android:text="发送"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/chat_sl"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/chat_bottom"
+        android:layout_below="@id/chat_actionbar" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/chat_ll_message1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/chat_time"
+                    android:text="下午13:25"
+                    android:textColor="#ffffff"
+                    android:textSize="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp" >
+
+                    <ImageView
+                        android:id="@+id/chat_mess_my1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/my" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_toLeftOf="@+id/chat_mess_my1"
+                        android:background="@drawable/chat_img1"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="你拍的真不错!"
+                        android:textSize="18dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp" >
+
+                    <ImageView
+                        android:id="@+id/chat_mess_xiaolan1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/xiaolan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:layout_toRightOf="@+id/chat_mess_xiaolan1"
+                        android:background="@drawable/chat_img2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:text="谢谢,已关注你。"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/chat_time"
+                    android:text="中午12:00"
+                    android:textColor="#ffffff"
+                    android:textSize="10dp" />
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp" >
+
+                    <ImageView
+                        android:id="@+id/chat_mess_my2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/my" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/chat_mess_my2"
+                        android:background="@drawable/chat_img3"
+                        android:scaleType="fitXY"
+                        android:layout_marginLeft="70dp"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="好专业的照片，非常喜欢这种风格，期待你更好的作品"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp" >
+
+                    <ImageView
+                        android:id="@+id/chat_mess_xiaolan2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/xiaolan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/chat_mess_xiaolan2"
+                        android:background="@drawable/chat_img4"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:text="恩恩，好的"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chat_ll_message2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    
+
+</RelativeLayout>

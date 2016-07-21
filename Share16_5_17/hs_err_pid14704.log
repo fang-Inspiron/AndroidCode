@@ -1,0 +1,136 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:124), pid=14704, tid=14504
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (8.0_05-b13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.5-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000021bd800):  JavaThread "Unknown thread" [_thread_in_vm, id=14504, stack(0x00000000025c0000,0x00000000026c0000)]
+
+Stack: [0x00000000025c0000,0x00000000026c0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x308dea]
+V  [jvm.dll+0x25def1]
+V  [jvm.dll+0x25eb0f]
+V  [jvm.dll+0x256466]
+V  [jvm.dll+0x5d33c]
+V  [jvm.dll+0x5d433]
+V  [jvm.dll+0x71d2a]
+V  [jvm.dll+0x72088]
+V  [jvm.dll+0xe1607]
+V  [jvm.dll+0xe1996]
+V  [jvm.dll+0x1f13e7]
+V  [jvm.dll+0x2227c4]
+V  [jvm.dll+0x149f71]
+C  [javaw.exe+0x208a]
+C  [javaw.exe+0xc9db]
+C  [javaw.exe+0xca6f]
+C  [KERNEL32.DLL+0x18102]
+C  [ntdll.dll+0x5c2e4]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000021bd800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=14504, stack(0x00000000025c0000,0x00000000026c0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.017 loading class java/lang/CharSequence done
+Event: 0.018 loading class java/lang/String done
+Event: 0.018 loading class java/lang/Class
+Event: 0.018 loading class java/lang/reflect/AnnotatedElement
+Event: 0.018 loading class java/lang/reflect/AnnotatedElement done
+Event: 0.018 loading class java/lang/reflect/GenericDeclaration
+Event: 0.018 loading class java/lang/reflect/GenericDeclaration done
+Event: 0.018 loading class java/lang/reflect/Type
+Event: 0.018 loading class java/lang/reflect/Type done
+Event: 0.018 loading class java/lang/Class done
+
+
+Dynamic libraries:
+0x00007ff671740000 - 0x00007ff671774000 	C:\Program Files\Java\jdk1.8.0_05\bin\javaw.exe
+0x00007ffa6ff50000 - 0x00007ffa70111000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa6d6a0000 - 0x00007ffa6d74d000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffa6cff0000 - 0x00007ffa6d1d8000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffa6e740000 - 0x00007ffa6e7e7000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffa6d600000 - 0x00007ffa6d69d000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffa6e3b0000 - 0x00007ffa6e40b000 	C:\WINDOWS\system32\sechost.dll
+0x00007ffa6fd50000 - 0x00007ffa6fe6c000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffa6db40000 - 0x00007ffa6dc96000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffa6e410000 - 0x00007ffa6e596000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffa652e0000 - 0x00007ffa65554000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.0_none_8c15ae12515e1c22\COMCTL32.dll
+0x00007ffa6e130000 - 0x00007ffa6e3ad000 	C:\WINDOWS\system32\combase.dll
+0x00007ffa6d2c0000 - 0x00007ffa6d32a000 	C:\WINDOWS\system32\bcryptPrimitives.dll
+0x00007ffa6e5a0000 - 0x00007ffa6e5db000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ffa6c460000 - 0x00007ffa6c491000 	C:\WINDOWS\system32\nvinitx.dll
+0x00007ffa6c450000 - 0x00007ffa6c45a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x000000000f000000 - 0x000000000f006000 	C:\Program Files\NVIDIA Corporation\CoProcManager\_etoured.dll
+0x00007ffa69f60000 - 0x00007ffa69f92000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvd3d9wrapx.dll
+0x00007ffa6dd00000 - 0x00007ffa6e129000 	C:\WINDOWS\system32\SETUPAPI.dll
+0x00007ffa6d1e0000 - 0x00007ffa6d223000 	C:\WINDOWS\system32\CFGMGR32.dll
+0x00007ffa69de0000 - 0x00007ffa69e02000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvdxgiwrapx.dll
+0x000000006bd70000 - 0x000000006be42000 	C:\Program Files\Java\jdk1.8.0_05\jre\bin\msvcr100.dll
+0x000000006b540000 - 0x000000006bd6a000 	C:\Program Files\Java\jdk1.8.0_05\jre\bin\server\jvm.dll
+0x00007ffa6fed0000 - 0x00007ffa6fed8000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffa63640000 - 0x00007ffa63649000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffa6a8e0000 - 0x00007ffa6a903000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa6fee0000 - 0x00007ffa6ff4b000 	C:\WINDOWS\system32\WS2_32.dll
+0x0000000002130000 - 0x000000000215c000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x000000006b530000 - 0x000000006b53f000 	C:\Program Files\Java\jdk1.8.0_05\jre\bin\verify.dll
+0x000000006b500000 - 0x000000006b528000 	C:\Program Files\Java\jdk1.8.0_05\jre\bin\java.dll
+0x000000006b4e0000 - 0x000000006b4f6000 	C:\Program Files\Java\jdk1.8.0_05\jre\bin\zip.dll
+0x00007ffa60a00000 - 0x00007ffa60b8c000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=gbk -Xbootclasspath:D:\StudySoftWare\Java\Java\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-22\android.jar 
+java_command: com.test.Time
+java_class_path (initial): E:\AndroidCode\Share4_19\libs\okio-1.4.0.jar;E:\AndroidCode\Share4_19\libs\locSDK_4.2.jar;E:\AndroidCode\Share4_19\libs\BmobSDK_V3.4.5_1111.jar;E:\AndroidCode\Share4_19\libs\android-support-v4.jar;E:\AndroidCode\Share4_19\libs\Bmob_Push_V0.6beta_20150408.jar;E:\AndroidCode\Share4_19\libs\bshare_android_sdkv1.2.2a.jar;E:\AndroidCode\Share4_19\libs\okhttp-2.4.0.jar;E:\AndroidCode\Share4_19\libs\Volley.jar;E:\AndroidCode\Share4_19\bin\classes;E:\AndroidCode\AndroidDemo\libs\bshare_android_sdk1.2.1a.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_05
+PATH=C:/Program Files/Java/jre1.8.0_66/bin/server;C:/Program Files/Java/jre1.8.0_66/bin;C:/Program Files/Java/jre1.8.0_66/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_05\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.3.5\;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\StudySoftWare\Java\Java\adt-bundle-windows-x86_64-20140702\eclipse;
+USERNAME=jianfang
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 8284668k(3652528k free), swap 9595388k(2273864k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.5-b02) for windows-amd64 JRE (1.8.0_05-b13), built on Mar 18 2014 01:08:39 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Jan 19 16:12:21 2016
+elapsed time: 0 seconds
+

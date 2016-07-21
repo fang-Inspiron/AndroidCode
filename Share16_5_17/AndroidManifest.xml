@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.share4_15"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
+    <application
+        android:allowBackup="true"
+        android:name="com.data.Queue"
+        android:icon="@drawable/share_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3yoD80PlKwMoP9yHHvmhS77k" />
+
+        <activity
+            android:name="com.example.activity.WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.share.MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.example.activity.ItemContentActivity" />
+        <activity android:name="com.example.activity.LoginActivity" />
+        <activity android:name="com.example.activity.RegistActivity" />
+        <activity android:name="com.example.activity.SheZhiActivity" />
+        <activity android:name="com.example.activity.ChangePassActivity" />
+        <activity android:name="com.example.activity.JiBenZiLiaoActivity" />
+        <activity android:name="com.example.activity.MessageSettActivity" />
+        <activity android:name="com.example.activity.MyInfoActivity" />
+        <activity android:name="com.example.activity.ShuangChuanActivity" />
+        <activity android:name="com.example.activity.MyRecomActivity" />
+        <activity android:name="com.example.activity.MyUpLoadActivity" />
+        <activity android:name="com.example.activity.SiXinActivity" />
+        <activity android:name="com.example.activity.NewGuanZhuActivity" />
+        <activity android:name="com.example.activity.ChatActivity" />
+        <activity android:name="com.example.activity.HuoDongActivity" />
+        
+        <activity
+            android:name="com.photo.activity.AlbumActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.photo.activity.ImageFile" />
+        <activity android:name="com.photo.activity.ShowAllPhoto" />
+        <activity android:name="com.photo.activity.GalleryActivity" />
+        
+        
+        <!-- 定义Broadcast Receiver指定监听的Action(系统Date改变action) -->  
+        <receiver android:name="MyReceiver" >  
+            <intent-filter>  
+                <action android:name="com.photo.activity.DATE_CHANGED" />  
+            </intent-filter>  
+        </receiver>  
+        
+        <activity
+            android:name="com.bshare.activity.BShareEditor"
+            android:configChanges="keyboardHidden|orientation"
+            android:icon="@drawable/ic_launcher" >
+            <intent-filter>
+                <action android:name="bshare.share.editor" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bshare.activity.BShareMore"
+            android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="bshare.share.more" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bshare.activity.AuthorizationActivity"
+            android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="bshare.authorization.action" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bshare.activity.BShareBrowser"
+            android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="bshare.browser.action" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee" >
+
+    <LinearLayout
+        android:id="@+id/upload_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/back_actionbar"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/upload_back"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="上传"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shang_top"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/upload_actionbar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/shang_photo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/shang_photo"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/dingwei"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/shang_bt_loca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/didian"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:text="定位中..."
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/shang_bt_xunaze"
+                android:layout_width="fill_parent"
+                android:layout_height="26dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shang_xuanzen_normal"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="25dp"
+                android:tag="0"
+                android:text="原创"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/shang_line"
+        android:layout_width="fill_parent"
+        android:layout_height="8dp"
+        android:layout_below="@id/shang_top"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shang_lin" />
+
+    <LinearLayout
+        android:id="@+id/shang_pinmian"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/shang_line"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_pingmian"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="平面设计"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_wangye"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="网页设计"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_ui"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="UI/icon"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_chahua"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="插画/手绘"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shang_xuni"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/shang_pinmian"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_xuni"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="虚拟与设计"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_yingshi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="影视"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_sheying"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="摄影"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_qita"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yinying"
+            android:onClick="searchOnClick"
+            android:padding="5dp"
+            android:tag="0"
+            android:text="其他"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shang_zuopinmingcheng"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/shang_xuni"
+        android:layout_marginTop="13dp"
+        android:background="#ffffff" >
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="作品名称"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dp"
+        android:layout_below="@id/shang_zuopinmingcheng"
+        android:background="#33808080" />
+
+    <LinearLayout
+        android:id="@+id/shang_zuopinshuoming"
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:layout_below="@id/shang_zuopinmingcheng"
+        android:layout_marginTop="13dp"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="说点什么吧..." >
+        </EditText>
+
+        <GridView
+            android:id="@+id/noScrollgridview"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="5dp"
+            android:horizontalSpacing="3dp"
+            android:numColumns="4"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp" >
+        </GridView>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dp"
+        android:layout_below="@id/shang_zuopinshuoming"
+        android:background="#88808080" />
+
+    <Button
+        android:id="@+id/shang_bt_sub"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/shang_zuopinshuoming"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="13dp"
+        android:background="#358fcb"
+        android:text="发布"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <CheckBox
+        android:id="@+id/jinzhi_cb"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_below="@id/shang_bt_sub"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_check_selector"
+        android:button="@null"
+        android:textColor="#0c629f" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/jinzhi_cb"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/jinzhi_cb"
+        android:text="禁止下载"
+        android:textColor="#000000"
+        android:textSize="14dp" />
+
+</RelativeLayout>

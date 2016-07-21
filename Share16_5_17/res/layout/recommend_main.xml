@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    >
+
+    <LinearLayout
+        android:id="@+id/recom_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/background_main" >
+
+        <ImageButton
+            android:id="@+id/recom_back"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:text="我推荐的"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <ListView
+        android:layout_below="@+id/recom_bar"
+        android:id="@+id/recommend_list"
+        android:layout_marginTop="6dp"
+	    android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="6dp"
+        android:dividerHeight="6dp"
+        android:background="#ffffff"
+        android:divider="#eeeeee"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" />
+
+    <Button
+        android:id="@+id/recom_top_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/up"
+        android:gravity="center"
+         />
+</RelativeLayout>

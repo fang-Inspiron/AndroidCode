@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_dialog"
+    android:layout_width="118dp"
+    android:layout_height="wrap_content"
+    android:background="#d5d3d4"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/dialog_bt4"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#d5d3d4"
+        android:text="原创作品"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#368ecd" />
+
+    <Button
+        android:id="@+id/dialog_bt1"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#d5d3d4"
+        android:text="设计资料"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#368ecd" />
+
+    <Button
+        android:id="@+id/dialog_bt2"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#d5d3d4"
+        android:text="设计师观点"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#368ecd" />
+
+    <Button
+        android:id="@+id/dialog_bt3"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#d5d3d4"
+        android:text="设计教程"
+        android:textSize="18dp" />
+
+</LinearLayout>

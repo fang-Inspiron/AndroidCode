@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    >
+
+    <LinearLayout
+        android:id="@+id/upload_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/background_main" >
+
+        <ImageButton
+            android:id="@+id/upload_back"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:text="我的上传"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    
+
+ 
+      
+    <RelativeLayout
+        android:layout_below="@+id/upload_bar"
+        android:id="@+id/upload_biaoti"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/essay_background" >
+
+        <TextView
+            android:id="@+id/uploadtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:text="上传时间"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/tuijian"
+            android:background="@drawable/essay_line" />
+
+        <TextView
+            android:id="@+id/tuijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="推荐最多"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/tuijian"
+            android:background="@drawable/essay_line" />
+
+        <TextView
+            android:id="@+id/sharemax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:text="分享最多"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <ListView
+        android:layout_below="@+id/upload_biaoti"
+        android:id="@+id/upload_list"
+        android:layout_marginTop="6dp"
+	    android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="6dp"
+        android:dividerHeight="6dp"
+        android:background="#ffffff"
+        android:divider="#eeeeee"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" />
+<Button
+        android:id="@+id/up_top_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/up"
+        android:gravity="center"
+         />
+</RelativeLayout>

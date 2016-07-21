@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:background="#eeeeee"
+        android:id="@+id/vp_main_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.65" >
+    </android.support.v4.view.ViewPager>
+
+    <RadioGroup
+        android:id="@+id/rg_main_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.35"
+        android:background="@drawable/radio_button_background"
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu1"
+            style="@style/rbt_bottom"
+            android:checked="true"
+            android:scaleType="centerInside"
+            android:background="@drawable/radio_button1_selector"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu2"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button2_selector"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu3"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button3_selector"
+             />
+        <RadioButton 
+            android:id="@+id/rb_main_tab_menu4"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button4_selector"
+           />
+        <RadioButton 
+            android:id="@+id/rb_main_tab_menu5"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button5_selector"
+            />
+    </RadioGroup>
+
+</LinearLayout>

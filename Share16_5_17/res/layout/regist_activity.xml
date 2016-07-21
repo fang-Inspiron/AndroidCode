@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_back" >
+
+    <ImageView
+        android:id="@+id/regist_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/login_logo" />
+
+    <TextView
+        android:id="@+id/regist_logo_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/regist_logo"
+        android:layout_alignRight="@id/regist_logo"
+        android:layout_below="@id/regist_logo"
+        android:layout_marginTop="5dp"
+        android:text="SHARE"
+        android:textColor="#ffffff"
+        android:textSize="30dp" />
+	<LinearLayout
+        android:id="@+id/regist_ll_youxiang"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/regist_logo_text"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edittext_circle_style"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/regist_youxiangImg"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/email_img" />
+
+        <ImageView
+            android:id="@+id/regist_youxiangxian"
+            android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#358fcb" />
+
+        <EditText
+            android:id="@+id/regist_youxiang"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:background="@null" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/regist_ll_username"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/regist_ll_youxiang"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_circle_style"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/regist_userImg"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/user_img" />
+
+        <ImageView
+            android:id="@+id/regist_userxian"
+            android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#358fcb" />
+
+        <EditText
+            android:id="@+id/regist_username"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:background="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/regist_ll_pass"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/regist_ll_username"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_circle_style"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/regist_passImg"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/pass_img" />
+
+        <ImageView
+            android:id="@+id/regist_passxian"
+            android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#358fcb" />
+
+        <EditText
+            android:id="@+id/regist_pass"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:inputType="textPassword" />
+    </LinearLayout>
+	<Button 
+	        android:id="@+id/regist_bt_zhuce"
+	        android:layout_width="130dp"
+	        android:layout_below="@id/regist_ll_pass"
+	        android:background="@drawable/login_bt"
+	        android:layout_marginTop="25dp"
+	        android:layout_centerHorizontal="true"
+	        android:layout_height="35dp"
+	        android:layout_marginLeft="15dp"
+	        android:text="确认注册"
+	        android:textColor="#FFFFFF"
+	        android:textSize="20dp"/>
+</RelativeLayout>
