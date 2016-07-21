@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/today_orders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.5"
+            android:background="#ffffff"
+            android:onClick="MyOrderChangeListener"
+            android:tag="1"
+            android:text="今日订单"
+            android:textColor="#fd6c03"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/trade_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.5"
+            android:background="#dadada"
+            android:onClick="MyOrderChangeListener"
+            android:tag="0"
+            android:text="交易记录"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_todayOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_button" 
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ListView
+            android:id="@+id/listView_todayOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#eeeeee"
+            android:dividerHeight="15dp"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_tradeRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_button"
+        android:orientation="vertical" 
+        android:visibility="invisible">
+
+        <ListView
+            android:id="@+id/listView_tradeRecord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#eeeeee"
+            android:dividerHeight="15dp"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

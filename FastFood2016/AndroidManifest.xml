@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fastfood"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+    
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    
+    <application
+        android:name="com.data.App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.fastfood.activity.WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.fastfood.activity.MainActivity"></activity>
+        <activity android:name="com.fastfood.activity.LoginActivity"></activity>
+        <activity android:name="com.fastfood.activity.RegisterActivity"></activity>
+        <activity android:name="com.fastfood.activity.SubmitOrderActivity"></activity>
+        <activity android:name="com.fastfood.mine.AlterPasswordActivity"></activity>
+        <activity android:name="com.fastfood.mine.AdviceActivity"></activity>
+        <activity android:name="com.fastfood.mine.AddressActivity"></activity>
+        <activity android:name="com.fastfood.mine.NewAddressActivity"></activity>
+        <activity android:name="com.fastfood.mine.DeclareActivity"></activity>
+        <activity android:name="com.fastfood.mine.MyOrderActivity"></activity>
+        <activity android:name="com.fastfood.mine.MyOrderActivityTest"></activity>
+    </application>
+
+</manifest>

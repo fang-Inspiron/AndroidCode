@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/layout_account"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="7dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="18792554433"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_integral_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:text="70" 
+            android:textSize="17sp"/>
+        
+        <TextView
+            android:id="@+id/tv_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_integral_value"
+            android:text="积分：" 
+            android:textSize="17sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_alterPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="7dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_alterPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="修改密码"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/ib_alterPassword"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+      		android:background="@drawable/back"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_myOrder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="2dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_myOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="我的订单"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/ib_myOrder"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+      		android:background="@drawable/back"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="2dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="收货地址"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/ib_address"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+      		android:background="@drawable/back"/>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/layout_declare"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="2dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_declare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="订餐说明"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/ib_declare"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+      		android:background="@drawable/back"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_advice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="2dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_advice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="意见反馈"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/ib_advice"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+      		android:background="@drawable/back"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/layout_check_update"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="MyInforLayoutOnClick"
+        android:layout_marginTop="2dp"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_check_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="检查更新"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/ib_check_update"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+      		android:background="@drawable/back"/>
+    </RelativeLayout>
+</LinearLayout>
