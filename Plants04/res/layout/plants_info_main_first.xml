@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/up_info"
+    android:background="@drawable/background" >
+<RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="芦小荟"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/plant_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/action_actionbar"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/head_image" />
+
+    <ImageView
+        android:id="@+id/buguang"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/plant_image"
+        android:background="@drawable/button_buguang" />
+
+    <ImageView
+        android:id="@+id/jiaoshui"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@id/plant_image"
+        android:background="@drawable/button_jiaoshui" />
+
+    <ImageView
+        android:id="@+id/jiashi"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="145dp"
+        android:layout_toRightOf="@id/plant_image"
+        android:background="@drawable/button_jiashi" />
+
+    <ImageView
+        android:id="@+id/tongfeng"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="185dp"
+        android:layout_toRightOf="@id/plant_image"
+        android:background="@drawable/button_tongfeng" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tongfeng"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp" >
+
+            <ImageView
+                android:id="@+id/sun_img"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/sun" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/sun_img"
+                android:text="光照强度"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="50%"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#fff" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp" >
+
+            <ImageView
+                android:id="@+id/shidu_img"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/turangshidu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/shidu_img"
+                android:text="土壤湿度"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="50%"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="#fff" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp" >
+
+            <ImageView
+                android:id="@+id/kongqi"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/shidu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/kongqi"
+                android:text="空气湿度"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="50%"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#fff" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp" >
+
+            <ImageView
+                android:id="@+id/temp_img"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/temp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/temp_img"
+                android:text="空气温度"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="50%"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="#ffffff" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_change"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_up" />
+
+</RelativeLayout>

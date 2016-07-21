@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/up_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background" >
+
+    <RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="历史"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_date"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/action_actionbar"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/info_button_background"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <RadioButton
+            android:id="@+id/rb_date_menu1"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:checked="true"
+            android:text="日"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_date_menu2"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:text="周"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_date_menu3"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:text="月"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_type"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/info_button_background"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <RadioButton
+            android:id="@+id/rb_type_menu1"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:checked="true"
+            android:text="空气温度"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_type_menu2"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:text="土壤温度"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_type_menu3"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:text="空气湿度"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_type_menu4"
+            style="@style/rbt_bottom"
+            android:background="@drawable/radio_button_selector"
+            android:text="光照强度"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+    </RadioGroup>
+
+</RelativeLayout>

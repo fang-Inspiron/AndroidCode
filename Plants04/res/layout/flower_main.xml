@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="植物宝典"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:background="@drawable/search_background"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/search_bt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_button" />
+
+        <com.qlf.plants.sort.ClearEditText
+            android:id="@+id/filter_edit"
+            android:layout_toRightOf="@id/search_bt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:hint="请输入关键字"
+            android:textColorHint="#fff"
+            android:background="@null"
+             android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:textSize="15.0dip" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="5dp" >
+
+        <com.qlf.plants.view.XListView
+            android:id="@+id/flower_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@drawable/line"
+            android:dividerHeight="2dp" >
+        </com.qlf.plants.view.XListView>
+
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_gravity="center"
+            android:background="@drawable/show_head_toast_bg"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30.0dip"
+            android:visibility="invisible" />
+
+        <com.qlf.plants.sort.SideBar
+            android:id="@+id/sidrbar"
+            android:layout_width="30.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|center" />
+    </FrameLayout>
+
+</LinearLayout>

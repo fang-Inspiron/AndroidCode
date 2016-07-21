@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+<RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="我的终端"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    
+	<ListView 
+    android:id="@+id/pos_list"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:divider="@drawable/line"
+    android:layout_below="@id/action_actionbar"
+    />
+	 <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/pos_saomiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/pos_img1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/pos_saomiao" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pos_img1"
+                android:layout_centerHorizontal="true"
+                android:text="扫描"
+                android:textColor="#fff" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pos_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/pos_img2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/pos_add" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pos_img2"
+                android:layout_centerHorizontal="true"
+                android:text="添加"
+                android:textColor="#fff" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

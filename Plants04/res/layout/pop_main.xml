@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+    android:layout_height="240dp"
+    android:orientation="vertical"
+    android:layout_centerInParent="true"
+        android:background="@drawable/pop_background1" >
+
+        <TextView
+            android:id="@+id/pop_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="补光时长（min）"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:background="@drawable/pop_head_background"
+            android:textColor="#fff" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/btn_0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="#fff"
+                android:textSize="17.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#fff"
+                android:textSize="17.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="15"
+                android:textColor="#fff"
+                android:textSize="17.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="20"
+                android:textColor="#fff"
+                android:textSize="17.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="25"
+                android:textColor="#fff"
+                android:textSize="17.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="30"
+                android:textColor="#fff"
+                android:textSize="17.0sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>

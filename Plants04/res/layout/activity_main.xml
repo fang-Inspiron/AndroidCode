@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:hyman="http://schemas.android.com/apk/res/com.qlf.plants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.qlf.plants.view.SlidingMenu
+        android:id="@+id/id_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/left_background"
+        hyman:rightPadding="80dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+			
+            <include layout="@layout/left_menu" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/main_background"
+                android:background="@drawable/background" >
+                <FrameLayout 
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/frame"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </com.qlf.plants.view.SlidingMenu>
+</RelativeLayout>

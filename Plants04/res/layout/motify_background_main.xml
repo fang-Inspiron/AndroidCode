@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="200dp"
+	    android:layout_height="300dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true"
+        android:scaleType="fitCenter" >
+    </ViewFlipper>
+	<ImageView 
+	    android:id="@+id/pre_photo"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_centerVertical="true"
+	    android:layout_marginLeft="20dp"
+	    android:background="@drawable/pre_photo"
+	    />
+	<ImageView 
+	    android:id="@+id/next_photo"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="20dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_centerVertical="true"
+	    android:background="@drawable/next_photo"
+	    />
+	<ImageView 
+	    android:id="@+id/enter_photo"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentBottom="true"
+	    android:layout_marginBottom="50dp"
+	    android:background="@drawable/enter_motify"
+	    />
+	
+
+</RelativeLayout>

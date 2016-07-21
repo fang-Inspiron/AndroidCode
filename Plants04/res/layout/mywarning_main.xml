@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="我的预警"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <ImageView 
+        android:id="@+id/warning_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/warning_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/warning_img"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/warn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:text="空气强度预警"
+                android:textColor="#fff" />
+
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/warning_kongqiwendu"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:tag="0"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                 >
+            </com.zcw.togglebutton.ToggleButton>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/warn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:text="空气湿度预警"
+                android:textColor="#fff" />
+
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/warning_kongqishidu"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                 android:tag="0"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                 >
+            </com.zcw.togglebutton.ToggleButton>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/warn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:text="土壤湿度预警"
+                android:textColor="#fff" />
+
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/warning_turangshidu"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                 android:tag="0"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                 >
+            </com.zcw.togglebutton.ToggleButton>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/warn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:text="光照强度预警"
+                android:textColor="#fff" />
+
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/warning_guangzhao"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                 android:tag="0"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                 >
+            </com.zcw.togglebutton.ToggleButton>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/warn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:text="水箱水位预警"
+                android:textColor="#fff" />
+
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/warning_water"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                 android:tag="0"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                 >
+            </com.zcw.togglebutton.ToggleButton>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

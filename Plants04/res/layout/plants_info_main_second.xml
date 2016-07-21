@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/down_info"
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+<RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="芦小荟"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_actionbar"
+        >
+    <ImageView
+        android:id="@+id/plant_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/head_image" />
+	<TextView 
+	    android:id="@+id/plant_down_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textColor="#fff"
+	    android:textSize="18sp"
+	    android:layout_toRightOf="@id/plant_image"
+	    android:layout_marginLeft="30dp"
+	    android:layout_marginTop="100dp"
+	    />    
+	    </RelativeLayout>
+	    <RadioGroup
+                    android:id="@+id/rg_main_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/info_button_background"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                   
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <RadioButton
+                        android:id="@+id/rb_main_tab_menu1"
+                        style="@style/rbt_bottom"
+                        android:background="@drawable/radio_button_selector"
+                        android:checked="true"
+                        android:text="空气温度"
+                        android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+                    <RadioButton
+                        android:id="@+id/rb_main_tab_menu2"
+                        style="@style/rbt_bottom"
+                        android:background="@drawable/radio_button_selector"
+                        android:text="土壤温度"
+                        android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+                    <RadioButton
+                        android:id="@+id/rb_main_tab_menu3"
+                        style="@style/rbt_bottom"
+                        android:background="@drawable/radio_button_selector"
+                        android:text="空气湿度"
+                        android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+                    <RadioButton
+                        android:id="@+id/rb_main_tab_menu4"
+                        style="@style/rbt_bottom"
+                        android:background="@drawable/radio_button_selector"
+                        android:text="光照强度"
+                        android:textColor="@drawable/radiobutton_main_tab_text_color" />
+                </RadioGroup>
+</LinearLayout>

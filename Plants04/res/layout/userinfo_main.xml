@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_back1" />
+    </RelativeLayout>
+
+    <com.qlf.plants.view.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/user_head"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/user_image"
+        app:border_color="#FFffffff"
+        app:border_width="1dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_head"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:text="王小萌"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+            <EditText 
+                android:id="@+id/edit_username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:text="王小萌"
+                android:textColor="#fff"
+                android:background="@null"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                />
+
+            <Button
+                android:id="@+id/motify_user_name"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:tag="1"
+                android:layout_marginRight="70dp"
+                android:background="@drawable/user_motify" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/user_qianming"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="爱知芽！爱植物！爱生活！"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+            <EditText 
+                android:id="@+id/edit_userqianming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="爱知芽！爱植物！爱生活！"
+                android:textColor="#fff"
+                android:background="@null"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                />
+
+            <Button
+                android:id="@+id/motify_user_qianming"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:tag="1"
+                android:layout_marginRight="70dp"
+                android:background="@drawable/user_motify" />
+        </RelativeLayout>
+    </LinearLayout>
+	<Button 
+	    android:id="@+id/exit_login"
+	    android:layout_width="140dp"
+	    android:layout_height="36dp"
+	    android:background="@drawable/button_background"
+	    android:text="退出登录"
+	    android:textColor="#fff"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="100dp"
+	    />
+</RelativeLayout>

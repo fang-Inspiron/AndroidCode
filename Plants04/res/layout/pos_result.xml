@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:id="@+id/action_actionbar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:background="@drawable/action_background" >
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_back1" />
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/action_back"
+            android:text="ID:123456"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <EditText 
+        android:id="@+id/pos_result_name"
+        android:layout_width="fill_parent"
+        android:layout_height="32dp"
+        android:background="@drawable/edit_background"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="70dp"
+        android:hint="名  称"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:paddingLeft="20dp"
+        android:layout_below="@id/userhead"
+        />
+    <EditText 
+        android:id="@+id/pos_result_position"
+        android:layout_width="fill_parent"
+        android:layout_height="32dp"
+        android:background="@drawable/edit_background"
+        android:layout_below="@id/pos_result_name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:hint="位  置"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:paddingLeft="20dp"
+        />
+	<Button 
+	    android:id="@+id/pos_result_ok"
+	    android:layout_width="100dp"
+	    android:layout_height="35dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginTop="20dp"
+	    android:layout_marginRight="40dp"
+	    android:layout_below="@id/pos_result_position"
+	    android:background="@drawable/button_ok_background"
+	    android:text="确  认"
+	    android:textColor="#fff"
+	    />
+</RelativeLayout>
