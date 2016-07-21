@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="10dp">
+
+    <!-- Item不可点击问题（CheckBox抢焦点）修改方法二：给CheckBox设置android:focusable="false" -->
+    <CheckBox 
+        android:id="@+id/id_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+    
+    <TextView 
+        android:id="@+id/id_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Android新技能"
+        android:textColor="#444"
+        android:singleLine="true"/>
+    
+    <TextView 
+        android:id="@+id/id_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_title"
+        android:layout_marginTop="10dp"
+        android:minLines="1"
+        android:maxLines="2"
+        android:text="Android打造万能的ListView和GridView适配器"
+        android:layout_toLeftOf="@id/checkbox"
+        android:textColor="#898989"
+        android:textSize="16sp"/>
+    
+    <TextView 
+        android:id="@+id/id_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_desc"
+        android:layout_marginTop="10dp"
+        android:text="2015-5-19"
+        android:textColor="#898989"
+        android:textSize="12sp"/>
+    
+     <TextView 
+        android:id="@+id/id_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_desc"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:text="10086"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="5dp"
+        android:padding="3dp"
+        android:background="#2ED667"
+        android:textColor="#fff"
+        android:textSize="12sp"/>
+
+</RelativeLayout>
