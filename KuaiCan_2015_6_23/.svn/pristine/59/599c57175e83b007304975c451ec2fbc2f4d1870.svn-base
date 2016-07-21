@@ -1,0 +1,45 @@
+package com.xrml.kuaican.net;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.xrml.kuaican.util.HttpUtils;
+import com.xrml.kuaican.util.JSONUtil;
+
+import android.os.Handler;
+import android.os.Message;
+
+/**
+ * @author Administrator
+ *	根据区域ID查询商品类别
+ */
+public class GetGoodsCategory extends Thread {
+
+	private int areaId;
+	private Handler handler;// 区域ID
+
+	public static final int NETWORK_ERROR = 600;
+	public static final int SUCCESS = 601;
+
+	public GetGoodsCategory(Handler handler, int areaId) {
+		super();
+		this.handler = handler;
+		this.areaId = areaId;
+	}
+	@Override
+	public void run() {
+		Map<String, String> rawParams = new HashMap<String, String>();
+		rawParams.put("areaId", areaId + "");
+		String result = HttpUtils.queryStringForPost(HttpUtils.GET_GOODS_CATE,
+				rawParams);
+		if (result == null) {
+			handler.sendEmptyMessage(NETWORK_ERROR);
+		} else {
+			Map<String, Object> data = JSONUtil.getGoodsCatePageByCus(result);
+			Message msg = Message.obtain();
+			msg.what = SUCCESS;
+			msg.obj = data;
+			handler.sendMessage(msg);
+		}
+	}
+}

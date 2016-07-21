@@ -1,0 +1,79 @@
+package com.xrml.kuaican.util;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+
+public class HttpUtils {
+
+	public static final String SUBMIT_ORDER = "http://121.42.8.50/Ordering/customer/BB8843D418339365B0A4615571670F31";
+	public static final String SEND_GOODS_CART = "http://121.42.8.50/Ordering/customer/Cart_add";
+
+	public static final String NETWORK_ERROR = "network_error";
+	//查看某个商家的商品列表的URL
+	public static final String GET_GOODS_LIST = "http://121.42.8.50/Ordering/customer/Goods_getGoodsPageByCus";
+	//用户修改密码
+	public static final String CHANGE_PASSWORD = "http://121.42.8.50/Ordering/customer/D896F91BD8655FA6C997777F84B4247C";
+	//查看广告URL
+	public static final String GET_ADPAGE = "http://121.42.8.50/Ordering/customer/Ad_getAdPageByCus";
+	//根据区域查看商品类别
+	public static final String GET_GOODS_CATE = "http://121.42.8.50/Ordering/customer/GoodsCate_getGoodsCatePageByCus";
+	/**
+	 * 用于POST请求生成字符串的方法
+	 * 
+	 * @param url
+	 *            (请求的地址)
+	 * @param params
+	 *            (POST请求参数)
+	 * @return 请求结果
+	 */
+	public static String queryStringForPost(String url,
+			Map<String, String> rawParams) {
+		HttpPost request = new HttpPost(url);
+		List<NameValuePair> params = null;
+		if (rawParams != null) {
+			params = new ArrayList<NameValuePair>();
+			for (String key : rawParams.keySet()) {
+				params.add(new BasicNameValuePair(key, rawParams.get(key)));
+			}
+		}
+		try {
+			if (params != null) {
+				request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			}
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		}
+		String result = null;
+		try {
+			HttpResponse response = new DefaultHttpClient().execute(request);
+			if (response.getStatusLine().getStatusCode() == 200) {
+				System.out.println("requese successful");
+				result = EntityUtils.toString(response.getEntity(), "utf-8");
+				System.out.println("result----->" + result);
+				return result;
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+			result = HttpUtils.NETWORK_ERROR;
+			return result;
+		} catch (IOException e) {
+			e.printStackTrace();
+			result = HttpUtils.NETWORK_ERROR;
+			return result;
+		}
+		return null;
+	}
+}

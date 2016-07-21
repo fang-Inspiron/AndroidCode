@@ -1,0 +1,38 @@
+package com.xrml.kuaican.data;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import android.app.Application;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.xrml.kuaican.model.User;
+
+public class App extends Application {
+
+	public static boolean INTERNET_IS_OPEN = false; // 当前状态是否联网
+	private User user;
+	
+	public List<Map<String,Object>> goodsList = new ArrayList<Map<String,Object>>();
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+
+		// 创建默认的ImageLoader配置参数
+		ImageLoaderConfiguration configuration = ImageLoaderConfiguration
+				.createDefault(this);
+		// Initialize ImageLoader with configuration.
+		ImageLoader.getInstance().init(configuration);
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/my_order_list_background"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/order_zero_orderId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical|left"
+            android:text="订单号：00010001"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/order_zero_orderState"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|left"
+            android:text="未接单"
+            android:textSize="17sp" />
+        <!-- my_order_circle_orangelight_button.xml -->
+
+        <Button
+            android:id="@+id/order_zero_orderBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:background="@drawable/circle_button_order_back_selector"
+            android:text="退"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myOrderHasReceivedLinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4px"
+        android:layout_marginTop="4px"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/order_zero_orderTime"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|left"
+            android:text="下单时间：15号12：23"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/order_zero_totalPrice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:text="合计：25元"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/order_zero_consumeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|left"
+        android:text="消费时间：12：23"
+        android:textSize="17sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备注:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/order_zero_order_more"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="无"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</LinearLayout>

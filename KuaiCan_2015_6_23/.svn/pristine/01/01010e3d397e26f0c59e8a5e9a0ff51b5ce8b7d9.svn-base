@@ -1,0 +1,85 @@
+package com.xrml.kuaican;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.xrml.kuaican.R;
+import com.xrml.kuaican.net.OrderSubmitThread;
+import com.xrml.kuaican.util.ActionBarUtil;
+
+import android.app.ActionBar;
+import android.app.Activity;
+import android.graphics.SumPathEffect;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class OrderActivity extends Activity{
+	
+	private int areaId;
+	private List<Map<String, Object>> cartListStr;
+	private int userId;
+	private String orderAddress;
+	private String orderPhone;
+	private String orderConsumeTime;
+	private String orderWay;
+	private String orderMore;
+	private String alipayWay;
+	private String USER418C5509E2171D55B0AEE5C2EA4442B5;
+	private Map<String, Object> data;
+	Button submit;
+	ActionBar actionBar;
+ 	Handler handler = new Handler(){
+ 		@Override
+ 		public void handleMessage(Message msg) {
+ 			// TODO Auto-generated method stub
+ 			if(msg.what == OrderSubmitThread.SUCCESS){
+ 				data = new HashMap<String, Object>();
+ 				data = (Map<String, Object>) msg.obj;
+ 				if(!data.isEmpty()){
+ 					Toast.makeText(getApplicationContext(), "Ìá½»³É¹¦", Toast.LENGTH_SHORT).show();
+ 					OrderActivity.this.finish();
+ 				}
+ 				else
+ 					Toast.makeText(getApplicationContext(), "ÍøÂç´íÎó",Toast.LENGTH_SHORT).show();
+ 			}
+ 			else
+ 				Toast.makeText(getApplicationContext(), "ÍøÂç´íÎó",Toast.LENGTH_SHORT).show();
+ 			super.handleMessage(msg);
+ 			
+ 		}
+ 	};
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.refer_order_form);
+		
+		ActionBarUtil.initActionBar(getApplicationContext(), getActionBar(), "±à¼­¶©µ¥");
+		submit = (Button) findViewById(R.id.refer_order_ok);
+//		cartListStr = new ArrayList<Map<String,Object>>();
+//		Map<String, Object> m1 = new HashMap<String, Object>();
+//		m1.put("goodsId", 1);
+//		m1.put("goodsCount", 2);
+//		Map<String, Object> m2 = new HashMap<String, Object>();
+//		m2.put("goodsId", 1);
+//		m2.put("goodsCount", 2);
+//		cartListStr.add(m1);
+//		cartListStr.add(m2);
+		submit.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				System.out.println("Ok");
+				new OrderSubmitThread(handler, 1, MainActivity.app.goodsList, 2, "xiyou", "13259495867","22:00", "1", "","2", "D41D8CD98F00B204E9800998ECF8427E").start();
+			}
+		});
+	}
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_button_normal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/shopping_car_good_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="20元标准餐"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/shopping_car_item_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="49dp"
+            android:background="@drawable/shopping_03" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/danjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="单价："
+            android:textColor="#fd6d00"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/shopping_car_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/danjia"
+            android:layout_marginTop="10dp"
+            android:text="20"
+            android:textColor="#fd6d00"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/yuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/shopping_car_item_price"
+            android:layout_marginTop="10dp"
+            android:text="元"
+            android:textColor="#fd6d00"
+            android:textSize="20dp" />
+
+        
+
+        <ImageButton
+            android:id="@+id/shopping_car_add_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shopping_08" />
+
+        <TextView
+            android:id="@+id/shopping_car_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@id/shopping_car_add_count"
+            android:text="1"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/shopping_car_sub_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/shopping_car_item_count"
+            android:background="@drawable/shopping_07" />
+        <TextView
+            android:id="@+id/shuliang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/shopping_car_sub_count"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:text="数量:"
+            android:textColor="#6b6b6b"
+            android:textSize="24dp" />
+    </RelativeLayout>
+
+</LinearLayout>

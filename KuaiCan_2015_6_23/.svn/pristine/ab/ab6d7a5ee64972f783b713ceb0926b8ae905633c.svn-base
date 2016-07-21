@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KuaiCan</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="high_to_low">从高到低</string>
+    <string name="low_to_high">从低到高</string>
+	<string name="refer_order">提交订单</string>
+</resources>

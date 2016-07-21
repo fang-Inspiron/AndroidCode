@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionBar"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/orange_line_bg" >
+
+    <ImageView
+        android:id="@+id/actionbar_back"
+        android:layout_width="10dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/shouye_03" />
+
+    <TextView
+        android:id="@+id/actionbar_user_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+</LinearLayout>

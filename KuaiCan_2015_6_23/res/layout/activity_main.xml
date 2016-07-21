@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RadioGroup
+        android:id="@+id/rg_main_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/radiobottom_main_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu1"
+            style="@style/rbt_bottom"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:checked="true"
+            android:drawableTop="@drawable/radiobutton_main_tab1"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu2"
+            style="@style/rbt_bottom"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:drawableTop="@drawable/radiobutton_main_tab2"
+            android:text="购物车"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu3"
+            style="@style/rbt_bottom"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:drawableTop="@drawable/radiobutton_main_tab3"
+            android:text="我的"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu4"
+            style="@style/rbt_bottom"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:drawableTop="@drawable/radiobutton_main_tab4"
+            android:text="电话订"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/rg_main_menu" >
+    </android.support.v4.view.ViewPager>
+
+    <RelativeLayout
+        android:id="@+id/anim"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00000000" >
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="350px"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="107px"
+                android:background="#FC6D02" >
+
+                <ImageButton
+                    android:id="@+id/ib_main_tab_back"
+                    android:layout_width="27px"
+                    android:layout_height="48px"
+                    android:layout_marginLeft="37px"
+                    android:layout_marginTop="31px"
+                    android:background="@drawable/shouye_03" />
+
+                <Button
+                    android:id="@+id/btn_main_tab_chooseLocat"
+                    style="@style/locat_choose"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="43px"
+                    android:layout_alignParentRight="true"
+                    android:text="选择位置" />
+
+                <ImageView
+                    android:id="@+id/iv_city_poisition"
+                    android:layout_width="30px"
+                    android:layout_height="38px"
+                    android:layout_toLeftOf="@id/btn_main_tab_chooseLocat"
+                    android:layout_marginTop="35px"
+                    android:background="@drawable/shouye_06" />
+            </RelativeLayout>
+
+            <!-- ViewPager -->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_main_ad"
+                android:layout_width="fill_parent"
+                android:layout_height="243px" />
+
+            <LinearLayout
+                android:id="@+id/ll_ad_main_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="right|bottom"
+                android:orientation="horizontal" />
+        </LinearLayout>
+        <!-- ADD -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="79px"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <Button
+                android:id="@+id/btn_main_choose_good_type"
+                style="@style/orange_text"
+                android:text="商品分类" />
+
+            <Button
+                android:id="@+id/btn_main_choose_order_type"
+                style="@style/orange_text"
+                android:text="按销量" />
+
+            <Button
+                android:id="@+id/btn_main_choose_price_type"
+                style="@style/orange_text"
+                android:text="按价格" />
+        </LinearLayout>
+
+        <!-- 菜单 -->
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="13px"
+            android:layout_marginRight="13px"
+            android:layout_marginTop="18px" >
+
+            <ListView
+                android:id="@+id/lv_main_content"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

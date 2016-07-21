@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#F0F0F0" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/hui_back"
+        android:orientation="vertical"
+        android:weightSum="9" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="3.25"
+            android:orientation="vertical" >
+
+            <!-- ViewPager -->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_main_ad"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_ad_main_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="5dp"
+                android:gravity="right|bottom"
+                android:orientation="horizontal" />
+        </RelativeLayout>
+        <!-- ADD -->
+
+        <LinearLayout
+            android:id="@+id/bt_menu"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <Button
+                android:id="@+id/btn_main_choose_good_type"
+                style="@style/orange_text"
+                android:text="商品分类" />
+
+            <Button
+                android:id="@+id/btn_main_choose_order_type"
+                style="@style/orange_text"
+                android:text="按销量" />
+
+            <Button
+                android:id="@+id/btn_main_choose_price_type"
+                style="@style/orange_text"
+                android:text="按价格" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ll_main_loading"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:text="加载中..."
+            android:textSize="25dp"
+            android:visibility="visible" />
+
+        <com.xrml.kuaican.util.ReFlashListView
+            android:id="@+id/lv_main_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="13px"
+            android:layout_marginRight="13px"
+            android:layout_weight="1.8"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_button_normal"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/user_location_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/raw_user_location" />
+
+    <TextView
+        android:id="@+id/user_location_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textSize="20sp"
+        android:text="姓名" />
+
+    <TextView
+        android:id="@+id/user_location_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="电话" />
+
+    <TextView
+        android:id="@+id/user_location_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentLeft="true"
+        android:textSize="20sp"
+        android:layout_below="@id/user_location_name"
+        android:text="地址" />
+    
+</RelativeLayout>

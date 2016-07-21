@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp" >
+
+        <TextView
+            android:id="@+id/ordertextview0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="未接单"
+            android:textColor="@color/orange_light"
+            android:gravity="center_vertical|center_horizontal" 
+            android:background="@color/white"/>
+		<TextView 
+		    android:id="@+id/ordertextview1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="已接单"
+            android:gravity="center_vertical|center_horizontal" 
+            android:background="@color/darkgray"/>
+        <TextView
+            android:id="@+id/ordertextview2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="已收货" 
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/darkgray"/>
+
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/myOrderViewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" >
+        
+	
+        
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

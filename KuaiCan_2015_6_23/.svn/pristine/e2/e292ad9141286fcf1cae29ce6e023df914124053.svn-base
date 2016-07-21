@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_tv_all_city"
+    android:layout_width="fill_parent"
+    android:layout_height="99px"
+    android:gravity="center_vertical"
+    android:textColor="@color/hui_text"
+    android:paddingLeft="56px"
+    android:textSize="32px" />

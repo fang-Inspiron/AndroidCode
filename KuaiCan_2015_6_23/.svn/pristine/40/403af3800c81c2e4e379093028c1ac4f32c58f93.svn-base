@@ -1,0 +1,80 @@
+package com.xrml.kuaican;
+
+import com.xrml.kuaican.util.ActionBarUtil;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class LocationActivity extends Activity{
+
+	private ListView user_list;
+	private TextView user_name;
+	private TextView user_phone;
+	private TextView user_location;
+	private ImageButton user_edit_location;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.user_location);
+		user_list = (ListView) findViewById(R.id.user_location);
+		user_list.setAdapter(new MyAdapter(getApplicationContext()));
+		ActionBarUtil.initActionBar(getApplicationContext(), getActionBar(), " ’ªıµÿ÷∑");
+	}
+
+	class MyAdapter extends BaseAdapter {
+
+		private LayoutInflater ll = null;
+		public MyAdapter(Context context) {
+			// TODO Auto-generated constructor stub
+			this.ll = LayoutInflater.from(context);
+		}
+		@Override
+		public int getCount() {
+			return 4;
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return null;
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@SuppressLint({ "InflateParams", "ViewHolder" }) @Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			convertView = (RelativeLayout)ll.inflate(R.layout.user_location_item,null);
+			user_name = (TextView) convertView.findViewById(R.id.user_location_name);
+			user_phone = (TextView) convertView.findViewById(R.id.user_location_phone);
+			user_location = (TextView) convertView.findViewById(R.id.user_location_location);
+			user_edit_location = (ImageButton) convertView.findViewById(R.id.user_location_edit);
+			user_edit_location.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+			user_name.setText("ad");
+            return convertView;
+		}
+
+	}
+	
+}

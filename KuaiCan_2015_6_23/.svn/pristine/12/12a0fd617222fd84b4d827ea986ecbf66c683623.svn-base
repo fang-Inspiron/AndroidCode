@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" 
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.6" >
+    </android.support.v4.view.ViewPager>
+
+    <RadioGroup
+        android:id="@+id/rg_main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.4"
+        android:background="@drawable/radiobottom_main_bg"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu1"
+            style="@style/rbt_bottom"
+            android:checked="true"
+            android:drawableTop="@drawable/radiobutton_main_tab1"
+            android:text="首页"	
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu2"
+            style="@style/rbt_bottom"
+            android:drawableTop="@drawable/radiobutton_main_tab2"
+            android:text="购物车"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_tab_menu3"
+            style="@style/rbt_bottom"
+            android:drawableTop="@drawable/radiobutton_main_tab3"
+            android:text="我的"
+            android:textColor="@drawable/radiobutton_main_tab_text_color" />
+        
+        <RadioButton 
+            android:id="@+id/rb_main_tab_menu4"
+            style="@style/rbt_bottom"
+            android:drawableTop="@drawable/radiobutton_main_tab4"
+            android:text="电话订"
+            android:textColor="@drawable/radiobutton_main_tab_text_color"/>
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical" >
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="25dp" >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账户:"
+            android:textSize="18dp"/>
+		<!-- 用户手机号 -->
+        <TextView
+            android:id="@+id/fragment_my_user_phoneNumb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical|left"
+            android:textSize="18dp" />
+		<!-- 用户积分 -->
+        <TextView
+            android:id="@+id/fragment_my_user_integral"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|left"
+            android:textSize="18dp" />
+    </LinearLayout>
+	<ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent">
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:divider="@drawable/divider_line"
+        android:orientation="vertical"
+        android:showDividers="middle|end" >
+		<!-- 修改密码 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_change_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp" 
+            android:clickable="true"
+            android:background="@drawable/my_button_selector">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="修改密码"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+		<!-- 我的订单 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_myOrder"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:clickable="true" 
+            android:background="@drawable/my_button_selector">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="我的订单"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+		<!-- 收货地址 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_add"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:clickable="true" 
+            android:background="@drawable/my_button_selector">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="收货地址"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+		<!-- 订单说明 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_orderExplain"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:clickable="true" 
+            android:background="@drawable/my_button_selector">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="使用说明"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+		<!-- 意见反馈 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_feedBack"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:clickable="true"
+            android:background="@drawable/my_button_selector" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="意见反馈"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+		<!-- 检查更新 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_checkUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:clickable="true" 
+            android:background="@drawable/my_button_selector">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="检查更新"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+        <!-- 退出 -->
+        <LinearLayout
+            android:id="@+id/fragment_my_back"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:clickable="true" 
+            android:background="@drawable/my_button_selector">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center_vertical|left"
+                android:text="退出"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical|left"
+                android:text=">"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+    
+	</ScrollView>
+</LinearLayout>

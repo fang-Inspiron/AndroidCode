@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item 
+	    android:id="@+id/user_state"
+	    android:title="未登录"
+	    />
+    <item
+        android:id="@+id/choose_area"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="选择区域"/>
+
+</menu>

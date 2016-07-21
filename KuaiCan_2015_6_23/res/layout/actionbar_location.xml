@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionBar_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/actionbar_location_back"
+            android:layout_width="10dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20px"
+            android:background="@drawable/shouye_03" />
+
+        <TextView
+            android:id="@+id/user_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5px"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/actionbar_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="8px" >
+
+            <TextView
+                android:id="@+id/actionBar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8px"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/choose_area_photo"
+                android:layout_width="15dp"
+                android:layout_height="22dp"
+                android:layout_alignTop="@id/actionBar_text"
+                android:layout_marginRight="3px"
+                android:layout_marginTop="2dp"
+                android:layout_toLeftOf="@id/actionBar_text" />
+
+            <Button
+                android:id="@+id/actionBar_search"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50dp"
+                android:layout_toLeftOf="@id/choose_area_photo"
+                android:background="@drawable/circle_button_actionbar_search_selector"
+                android:text="搜"
+                android:textColor="@color/orange_light"
+                android:textSize="15dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_search"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/orange_light"
+        android:visibility="invisible" >
+
+        <ImageView
+            android:id="@+id/search_back"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_back" />
+
+        <ImageView
+            android:id="@+id/searc_line"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/search_back"
+            android:background="#fff" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/searc_line"
+            android:background="@null"
+            android:hint="  搜索" />
+
+        <ImageView
+            android:id="@+id/searc_line_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/searc_line"
+            android:background="#fff" />
+
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_search" />
+    </RelativeLayout>
+
+</RelativeLayout>

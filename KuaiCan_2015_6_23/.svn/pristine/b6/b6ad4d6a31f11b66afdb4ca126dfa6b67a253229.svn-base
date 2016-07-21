@@ -1,0 +1,127 @@
+package com.xrml.kuaican.activity;
+
+import java.util.Map;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.xrml.kuaican.R;
+import com.xrml.kuaican.data.App;
+import com.xrml.kuaican.net.ChangePasswordThread;
+
+public class ChangePassword extends Activity {
+
+	private static final String TAG = "ChangePassword";
+	// 原密码错误
+	private static final String OLDPASSWORDERROR = "40885C152C1BA6F5D1D20A06CBAB7DFA";
+	// 修改成功
+	private static final String CHANGESUCC = "update_ok";
+	// 登录时效，重新登录
+	private static final String LOGINFAILURE = "F1F5FF7206C408B26AA1A2B63EDBAEF3";
+
+	private Button bt_change_password_submit;
+
+	private EditText et_change_password_oldpassword;
+	private EditText et_change_password_newpassword_1;
+	private EditText et_change_password_newpassword_2;
+
+	private Map<String, Object> map;
+	private String phoneNumber = null;
+	private String checkStr = null;
+
+	private Handler handler = new Handler() {
+		@SuppressWarnings("unchecked")
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case ChangePasswordThread.NETWORK_ERROR:
+				Toast.makeText(ChangePassword.this, "获取信息失败", Toast.LENGTH_SHORT).show();
+				break;
+			case ChangePasswordThread.SUCCESS:
+				map = (Map<String, Object>) msg.obj;
+				checkResult((String) map.get("response"));
+				break;
+			}
+		}
+
+		private void checkResult(String response) {
+			if (response.equals(OLDPASSWORDERROR)) {
+				Log.i(TAG, "原密码错误");
+				Toast.makeText(ChangePassword.this, "原密码错误", Toast.LENGTH_SHORT).show();
+			} else if (response.equals(CHANGESUCC)) {
+				Log.i(TAG, "修改成功");
+				Toast.makeText(ChangePassword.this, "修改成功",Toast.LENGTH_SHORT).show();
+			} else if (response.equals(LOGINFAILURE)) {
+				Log.i(TAG, "登录失效，重新登录");
+				Toast.makeText(ChangePassword.this, "登录失效，重新登录", Toast.LENGTH_SHORT).show();
+			}
+		};
+	};
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.change_password);
+		initView();
+		App app = (App) getApplication();
+	//	phoneNumber = "18710901731";
+	//	checkStr = "9DD1D7F1B749B53329BDBEFC169D2C0A";
+		phoneNumber = app.getUser().getPhone();
+		checkStr = app.getUser().getCheckStr();
+	}
+
+	private void initView() {
+		et_change_password_oldpassword = (EditText) findViewById(R.id.et_change_password_oldpassword);
+		et_change_password_newpassword_1 = (EditText) findViewById(R.id.et_change_password_newpassword_1);
+		et_change_password_newpassword_2 = (EditText) findViewById(R.id.et_change_password_newpassword_2);
+		bt_change_password_submit = (Button) findViewById(R.id.bt_change_password_submit);
+		bt_change_password_submit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				String oldPassword = et_change_password_oldpassword.getText()
+						.toString();
+				String newPassword_1 = et_change_password_newpassword_1
+						.getText().toString();
+				String newPassword_2 = et_change_password_newpassword_2
+						.getText().toString();
+				boolean flag = checkInput(oldPassword, newPassword_1,
+						newPassword_2);
+				if (flag) {
+					new ChangePasswordThread(handler, phoneNumber, oldPassword,
+							newPassword_1, checkStr).start();
+				}
+			}
+
+			private boolean checkInput(String oldPassword,
+					String newPassword_1, String newPassword_2) {
+				Log.i(TAG, TAG + "-->check()");
+				if (oldPassword == null || oldPassword.equals("")) {
+					et_change_password_oldpassword.requestFocus();
+					Toast.makeText(ChangePassword.this, "原密码不能为空",
+							Toast.LENGTH_SHORT).show();
+				} else if (newPassword_1 == null || newPassword_1.equals("")) {
+					et_change_password_newpassword_1.requestFocus();
+					Toast.makeText(ChangePassword.this, "新密码不能为空",
+							Toast.LENGTH_SHORT).show();
+				} else if (newPassword_2 == null || newPassword_2.equals("")) {
+					et_change_password_newpassword_2.requestFocus();
+					Toast.makeText(ChangePassword.this, "请再次输入密码",
+							Toast.LENGTH_SHORT).show();
+				} else if (newPassword_1.equals(newPassword_2)) {
+					return true;
+				}
+				return false;
+			}
+		});
+	}
+
+}

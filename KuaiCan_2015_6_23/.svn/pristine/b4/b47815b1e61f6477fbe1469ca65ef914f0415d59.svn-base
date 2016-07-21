@@ -1,0 +1,579 @@
+package com.xrml.kuaican.fragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import android.app.ActionBar.LayoutParams;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupMenu;
+import android.widget.PopupMenu.OnMenuItemClickListener;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.xrml.kuaican.MainActivity;
+import com.xrml.kuaican.R;
+import com.xrml.kuaican.activity.CityPosition;
+import com.xrml.kuaican.data.App;
+import com.xrml.kuaican.net.DownLoadImage;
+import com.xrml.kuaican.net.GetGoodsCategory;
+import com.xrml.kuaican.net.GetGoodsListThread;
+import com.xrml.kuaican.net.IsConnection;
+
+/**
+ * 主页Fragment
+ * 
+ * @author Administrator
+ * 
+ */
+public class MainTabFragment extends Fragment implements OnClickListener {
+
+	public static String TAG = "MainTabFragment";
+
+	private boolean isFirst = true;// 是否第一次判断联网
+	private View rootView;
+	// 广告
+	private ViewPager vp_main_ad = null;
+	private List<View> adList = new ArrayList<View>();
+	private ImageView iv1, iv2, iv3;
+	private ImageView[] iv_circles;
+	private ImageView iv_ad_circle_point;
+	private ViewGroup viewGroup;
+	// 并发
+	private AtomicInteger atomicInteger = new AtomicInteger(0);
+	private boolean isContinue = true;
+
+	private Button btn_main_choose_good_type = null;
+	private Button btn_main_choose_order_type = null;
+	private Button btn_main_choose_price_type = null;
+	public static Button btn_main_tab_chooseLocat = null;
+	private ImageView iv_city_poisition;
+
+	private PopupMenu pm_choose_good_type = null;
+	private PopupMenu pm_choose_price_type = null;
+	private PopupMenu pm_choose_order_type = null;
+	private PopupMenu pm_choose_locat_type = null;
+	// 某区域商品列表
+	private ListView lv_main_content = null;
+	private List<Map<String, Object>> mData = null;
+	private Map<String, Object> data = null;
+	// 某区域商品类别
+	private List<Map<String, Object>> cateDataList = null;
+	private Map<String, Object> cateData = null;
+	// 当前某区域商品类别
+	private int currGoodsCategoryId = 1;
+	private int currGoodsCateSortWay = 1;
+
+	private App app ;
+	// 加载商品的handler
+	private Handler handler = new Handler() {
+		@SuppressWarnings("unchecked")
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case GetGoodsListThread.NETWORK_ERROR:
+				Toast.makeText(getActivity(), "获取商品信息失败", Toast.LENGTH_SHORT)
+						.show();
+				break;
+			case GetGoodsListThread.NO_GOODS:
+				currGoodsCategoryId = 1;
+				Toast.makeText(getActivity(), "没有该类商品", Toast.LENGTH_SHORT)
+						.show();
+				break;
+			case GetGoodsListThread.SUCCESS:
+				// 得到map中的list
+				data = (Map<String, Object>) msg.obj;
+				mData = (List<Map<String, Object>>) data.get("list");
+			//	System.out.println("mData.toString()-->" + mData.toString());// 商品列表
+				GoodsAdapter goodsAdapter = new GoodsAdapter(getActivity());
+				lv_main_content.setAdapter(goodsAdapter);
+				break;
+			case GetGoodsCategory.NETWORK_ERROR:
+				Toast.makeText(getActivity(), "获取商品类别失败", Toast.LENGTH_SHORT)
+						.show();
+				break;
+			case GetGoodsCategory.SUCCESS:
+				cateData = (Map<String, Object>) msg.obj;
+				cateDataList = (List<Map<String, Object>>) cateData.get("list");
+				initGoodsCate();
+				break;
+			}
+		}
+
+		// 初始化商品类别列表
+		private void initGoodsCate() {
+			Map<String, Object> oMap;
+			Menu menu = pm_choose_good_type.getMenu();
+			for (int i = 0; i < cateDataList.size(); i++) {
+				oMap = cateDataList.get(i);
+				menu.add(Menu.NONE, Menu.FIRST + 0, 0,
+						oMap.get("goodsCategoryName").toString());
+			//	System.out.println("goodsCategoryName-->"
+					//	+ oMap.get("goodsCategoryName").toString());
+			}
+		};
+	};
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		rootView = inflater.inflate(R.layout.fragment_main, null);
+		app = MainActivity.app;
+		// 初始化控件
+		findViews();
+		// 初始化菜单
+		initPopupMenu();
+		// 初始化广告
+		initImageList();
+		initCirclePoint();
+		initApplication();
+		// 加载商品列表
+		if (IsConnection.checkNet(getActivity())) {
+			new GetGoodsCategory(handler, 1).start();
+			new GetGoodsListThread(handler, currGoodsCategoryId, "user", 1, 1)
+					.start();
+			isFirst = true;
+		} else {
+			if (isFirst) {
+				Toast.makeText(getActivity(), "当前无网络", Toast.LENGTH_SHORT)
+						.show();
+				isFirst = false;
+			}
+		}
+
+		return rootView;
+	}
+
+	private void initApplication() {
+		app = (App) getActivity().getApplication();
+
+	}
+
+	// 初始化广告List
+	private void initImageList() {
+		iv1 = new ImageView(getActivity());
+		iv1.setBackgroundResource(R.drawable.advertisement_1);
+		adList.add(iv1);
+		iv2 = new ImageView(getActivity());
+		iv2.setBackgroundResource(R.drawable.advertisement_2);
+		adList.add(iv2);
+		iv3 = new ImageView(getActivity());
+		iv3.setBackgroundResource(R.drawable.advertisement_3);
+		adList.add(iv3);
+		vp_main_ad.setAdapter(new AdPagerAdapter());
+		vp_main_ad.setOnPageChangeListener(new imageListOnListener());
+	}
+
+	private void findViews() {
+
+		vp_main_ad = (ViewPager) rootView.findViewById(R.id.vp_main_ad);
+		viewGroup = (ViewGroup) rootView.findViewById(R.id.ll_ad_main_group);
+
+		btn_main_choose_good_type = (Button) rootView
+				.findViewById(R.id.btn_main_choose_good_type);
+		btn_main_choose_good_type.setOnClickListener(this);
+
+		btn_main_choose_order_type = (Button) rootView
+				.findViewById(R.id.btn_main_choose_order_type);
+		btn_main_choose_order_type.setOnClickListener(this);
+
+		btn_main_choose_price_type = (Button) rootView
+				.findViewById(R.id.btn_main_choose_price_type);
+		btn_main_choose_price_type.setOnClickListener(this);
+
+		btn_main_tab_chooseLocat = (Button) rootView
+				.findViewById(R.id.btn_main_tab_chooseLocat);
+		btn_main_tab_chooseLocat.setOnClickListener(this);
+
+		iv_city_poisition = (ImageView) rootView
+				.findViewById(R.id.iv_city_poisition);
+		iv_city_poisition.setOnClickListener(this);
+
+		lv_main_content = (ListView) rootView
+				.findViewById(R.id.lv_main_content);
+
+	}
+
+	/**
+	 * （并发）更新当前位置
+	 */
+	private void atomicOption() {
+		atomicInteger.incrementAndGet();
+		if (atomicInteger.get() > iv_circles.length - 1) {
+			atomicInteger.getAndAdd(-3);
+		}
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+		}
+	}
+
+	// 圆点滚动
+	public class imageListOnListener implements OnPageChangeListener {
+
+		@Override
+		public void onPageSelected(int position) {
+			atomicInteger.getAndSet(position);
+			for (int i = 0; i < iv_circles.length; i++) {
+				iv_circles[position]
+						.setBackgroundResource(R.drawable.point_focused);
+				if (position != i) {
+					iv_circles[i]
+							.setBackgroundResource(R.drawable.point_unfocused);
+				}
+			}
+		}
+
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+		}
+
+		@Override
+		public void onPageScrollStateChanged(int arg0) {
+		}
+
+	}
+
+	private void initCirclePoint() {
+		iv_circles = new ImageView[adList.size()];
+		for (int i = 0; i < iv_circles.length; i++) {
+			iv_ad_circle_point = new ImageView(getActivity());
+			iv_ad_circle_point.setLayoutParams(new LayoutParams(15, 15));
+			iv_circles[i] = iv_ad_circle_point;
+			if (i == 0) {
+				iv_circles[i].setBackgroundResource(R.drawable.point_focused);
+			} else {
+				iv_circles[i].setBackgroundResource(R.drawable.point_unfocused);
+			}
+			viewGroup.addView(iv_circles[i]);
+		}
+		new Thread(new RefreshAdCircleTask()).start();
+	}
+
+	public class RefreshAdCircleTask implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				if (isContinue) {
+					imageHandler.sendEmptyMessage(atomicInteger.get());
+					atomicOption();
+				}
+			}
+		}
+	}
+
+	// 页面滑动
+	private Handler imageHandler = new Handler() {
+		public void handleMessage(android.os.Message msg) {
+			if (isContinue) {
+				vp_main_ad.setCurrentItem(msg.what);
+			}
+		};
+	};
+
+	// 菜单的初始化
+	private void initPopupMenu() {
+		//设置商品类别
+		pm_choose_good_type = new PopupMenu(getActivity(),
+				btn_main_choose_good_type);
+		pm_choose_good_type
+				.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+					@Override
+					public boolean onMenuItemClick(MenuItem item) {
+						setGoodsCateId(item.getTitle());
+						return false;
+					}
+
+					private void setGoodsCateId(CharSequence title) {
+						Map<String, Object> oMap;
+						for (int i = 0; i < cateDataList.size(); i++) {
+							oMap = cateDataList.get(i);
+							if (oMap.get("goodsCategoryName").toString()
+									.equals(title)) {
+								currGoodsCategoryId = (Integer) oMap
+										.get("goodsCategoryId");
+								new GetGoodsListThread(handler,
+										currGoodsCategoryId, "user", 1, 1)
+										.start();
+							}
+						}
+					}
+				});
+		//设置当前位置
+		pm_choose_locat_type = new PopupMenu(getActivity(),
+				btn_main_tab_chooseLocat);
+		pm_choose_locat_type.inflate(R.menu.btn_menu_choose_locat);
+		pm_choose_locat_type
+				.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+					@Override
+					public boolean onMenuItemClick(MenuItem item) {
+						btn_main_tab_chooseLocat.setText(item.getTitle());
+						return false;
+					}
+				});
+		
+		//设置销量排序方式
+		pm_choose_order_type = new PopupMenu(getActivity(),
+				btn_main_choose_order_type);
+		pm_choose_order_type.inflate(R.menu.btn_menu_choose_order);
+		pm_choose_order_type
+				.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+					@Override
+					public boolean onMenuItemClick(MenuItem item) {
+						if(item.getItemId() == R.id.order_high_to_low){
+							currGoodsCateSortWay = 3;
+							new GetGoodsListThread(handler,
+									currGoodsCategoryId, "user", currGoodsCateSortWay, 1)
+									.start();
+						}else if(item.getItemId() == R.id.order_low_to_high){
+							currGoodsCateSortWay = 2;
+							new GetGoodsListThread(handler,
+									currGoodsCategoryId, "user", currGoodsCateSortWay, 1)
+									.start();
+						}
+						return false;
+					}
+				});
+		
+		//设置价格排序方式
+		pm_choose_price_type = new PopupMenu(getActivity(),
+				btn_main_choose_price_type);
+		pm_choose_price_type.inflate(R.menu.btn_menu_choose_price);
+		pm_choose_price_type
+				.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+					@Override
+					public boolean onMenuItemClick(MenuItem item) {
+						switch (item.getItemId()) {
+						case R.id.price_high_to_low:
+							currGoodsCateSortWay = 1;
+							new GetGoodsListThread(handler,
+									currGoodsCategoryId, "user", currGoodsCateSortWay, 1)
+									.start();
+							break;
+						case R.id.price_low_to_high:
+							currGoodsCateSortWay = 0;
+							new GetGoodsListThread(handler,
+									currGoodsCategoryId, "user", currGoodsCateSortWay, 1)
+									.start();
+							break;
+						}
+						return false;
+					}
+				});
+	}
+
+	// 广告list的Adapter
+	public class AdPagerAdapter extends PagerAdapter {
+		// 获得页面总数
+		@Override
+		public int getCount() {
+			return 3;
+		}
+
+		// 判断 view和object的对应关系
+		@Override
+		public boolean isViewFromObject(View arg0, Object arg1) {
+			return arg0 == arg1;
+		}
+
+		/*
+		 * 获得相应位置上的view container view的容器 其实就是viewpager自身 position 相应的位置
+		 */
+		@Override
+		public Object instantiateItem(ViewGroup container, int position) {
+			container.addView(adList.get(position));
+			return adList.get(position);
+		}
+
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			container.removeView(adList.get(position));
+		}
+	}
+
+	// Button的监听
+	@Override
+	public void onClick(View view) {
+		switch (view.getId()) {
+		case R.id.btn_main_choose_good_type:
+			Log.i(TAG, "pm_choose_good_type.show()");
+			pm_choose_good_type.show();
+			break;
+		case R.id.btn_main_choose_order_type:
+			Log.i(TAG, "pm_choose_order_type.show()");
+			pm_choose_order_type.show();
+			break;
+		case R.id.btn_main_choose_price_type:
+			Log.i(TAG, "pm_choose_price_type.show()");
+			pm_choose_price_type.show();
+			break;
+		case R.id.btn_main_tab_chooseLocat:
+			Log.i(TAG, "pm_choose_locat_type.show()");
+			pm_choose_locat_type.show();
+			break;
+		case R.id.iv_city_poisition:
+			Intent intent = new Intent(getActivity(), CityPosition.class);
+			startActivity(intent);
+			break;
+		}
+	}
+
+	// 商品的Adapter
+	public class GoodsAdapter extends BaseAdapter {
+
+		private LayoutInflater mInflater;
+
+		public GoodsAdapter(Context context) {
+			mInflater = LayoutInflater.from(context);
+		}
+
+		// 返回adapter当中共多少个对象item
+		@Override
+		public int getCount() {
+			return mData == null ? 0 : mData.size();
+		}
+
+		// 根据位置，得到相应的item对象
+		@Override
+		public Object getItem(int position) {
+			return mData.get(position);
+		}
+
+		// 根据位置，得到相应的item对象的id
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		// 通过调用getView()方法，得到相应的view对象，并将其显示到Activity中
+		@Override
+		public View getView(int position, View arg1, ViewGroup arg2) {
+			final Map<String, Object> data = mData.get(position);
+			LinearLayout ll = (LinearLayout) mInflater.inflate(
+					R.layout.item_main_tab_good, null);
+
+			TextView tv_main_item_goodsName = (TextView) ll
+					.findViewById(R.id.tv_main_item_goodsName);
+			tv_main_item_goodsName.setText(data.get("goodsName").toString());
+
+			TextView tv_main_item_goodsSales = (TextView) ll
+					.findViewById(R.id.tv_main_item_goodsSales);
+			tv_main_item_goodsSales.setText("月销量: "
+					+ data.get("goodsSales").toString());
+
+			TextView tv_main_item_goodsContent = (TextView) ll
+					.findViewById(R.id.tv_main_item_goodsContent);
+			tv_main_item_goodsContent.setText(data.get("goodsContent")
+					.toString());
+
+			TextView tv_main_item_goodsPrice = (TextView) ll
+					.findViewById(R.id.tv_main_item_goodsPrice);
+			tv_main_item_goodsPrice.setText("￥ "
+					+ data.get("goodsPrice").toString());
+			// 加载商品图片
+			final ImageView iv_main_tab_item = (ImageView) ll
+					.findViewById(R.id.iv_main_tab_item);
+			ImageLoader.getInstance().loadImage(
+					DownLoadImage.IMAGE_URL + data.get("goodsImg").toString(),
+					new ImageLoadingListener() {
+
+						@Override
+						public void onLoadingStarted(String imageUri, View view) {
+
+						}
+
+						@Override
+						public void onLoadingFailed(String imageUri, View view,
+								FailReason failReason) {
+
+						}
+
+						@Override
+						public void onLoadingComplete(String imageUri,
+								View view, Bitmap loadedImage) {
+							iv_main_tab_item.setImageBitmap(loadedImage);
+						}
+
+						@Override
+						public void onLoadingCancelled(String imageUri,
+								View view) {
+
+						}
+					});
+
+			Button btn_main_item_submit = (Button) ll
+					.findViewById(R.id.btn_main_item_submit);
+			btn_main_item_submit.setOnClickListener(new OnClickListener() {
+
+				int c=1;
+				boolean isfirst = false;
+				@Override
+				public void onClick(View arg0) {
+				
+					boolean ishad=false;
+					
+					ShoppingCartFragment sf = ((MainActivity) getActivity()).getShoppingCartFragment();
+					Map<String, Object> map = new HashMap<String, Object>();
+					if(isFirst == true){
+					for(int i=0;i<MainActivity.app.goodsList.size();i++){
+						if(data.get("goodsName").equals(MainActivity.app.goodsList.get(i).get("goodsName")))
+						{
+							ishad=true;
+							c++;
+							Map<String, Object> m = new HashMap<String, Object>();
+							m.put("goodsId", data.get("goodsId"));
+							m.put("goodsName", data.get("goodsName"));
+							m.put("goodsPrice", data.get("goodsPrice"));
+							m.put("goodsCount", c);
+							MainActivity.app.goodsList.set(i, m);
+						}
+					}
+					}
+					if(!ishad){
+						map.put("goodsId", data.get("goodsId"));
+						map.put("goodsName", data.get("goodsName"));
+						map.put("goodsPrice", data.get("goodsPrice"));
+						map.put("goodsCount", 1);
+						MainActivity.app.goodsList.add(map);
+						isfirst = false;
+					}
+					sf.change();
+				}
+			});
+			return ll;
+		}
+
+	}
+
+}

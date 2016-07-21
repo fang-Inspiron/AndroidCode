@@ -1,0 +1,36 @@
+package com.xrml.kuaican.util;
+
+import android.app.ActionBar;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+
+import com.xrml.kuaican.R;
+
+public class ActionBarUtil {
+	public static void initMainActionBar(Context context, ActionBar actionBar,
+			String title) {
+		Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),
+				R.drawable.orange_line_bg);
+		@SuppressWarnings("deprecation")
+		BitmapDrawable bd = new BitmapDrawable(bitmap);
+		// 自定义标题栏
+		actionBar.setBackgroundDrawable(bd);
+		actionBar.setDisplayShowHomeEnabled(false);
+		actionBar.setTitle(title);
+	}
+
+	public static void initActionBar(Context context, ActionBar actionBar,
+			String title) {
+		Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),
+				R.drawable.orange_line_bg);
+		@SuppressWarnings("deprecation")
+		BitmapDrawable bd = new BitmapDrawable(bitmap);
+		// 自定义标题栏
+		actionBar.setBackgroundDrawable(bd);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(false); // 使左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题，否则，显示应用程序图标
+		actionBar.setTitle(title);
+	}
+}

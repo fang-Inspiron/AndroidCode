@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="107px"
+        android:background="@color/orange_light"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/ib_change_password_back"
+            android:layout_width="27px"
+            android:layout_height="48px"
+            android:layout_marginLeft="37px"
+            android:layout_marginTop="31px"
+            android:background="@drawable/shouye_03" />
+
+        <TextView
+            android:id="@+id/tv_change_password_changepassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28px"
+            android:text="修改密码"
+            android:textColor="@color/white"
+            android:textSize="40px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="547px"
+        android:layout_marginLeft="56px"
+        android:layout_marginRight="56px"
+        android:layout_marginTop="55px"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="54px"
+            android:layout_marginTop="56px" >
+
+            <TextView
+                android:id="@+id/tv_change_password_zhanghu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账户"
+                android:textColor="#3C3C3C"
+                android:textSize="35px" />
+            <TextView 
+                android:id="@+id/tv_change_password_phonenumb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:textColor="#3C3C3C"
+                android:textSize="35px"
+                android:text="18710901731"/>
+        </LinearLayout>
+        <EditText 
+            android:id="@+id/et_change_password_oldpassword"
+            style="@style/change_edittext"
+            android:layout_marginTop="30px"
+            android:hint="原密码"/>
+        <EditText 
+            android:id="@+id/et_change_password_newpassword_1"
+            style="@style/change_edittext"
+            android:hint="新密码"
+            android:layout_marginTop="50px"/>
+        <EditText 
+            android:id="@+id/et_change_password_newpassword_2"
+            style="@style/change_edittext"
+            android:hint="再次输入密码"
+            android:layout_marginTop="50px"/>
+    </LinearLayout>
+    <Button 
+        android:id="@+id/bt_change_password_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="56px"
+        android:layout_marginRight="56px"
+        android:layout_marginTop="50px"
+        android:text="确认修改"
+        android:textSize="40px"
+        android:textColor="@color/white"
+        android:background="@drawable/rectangle_button_orange_selector"/>
+
+</LinearLayout>

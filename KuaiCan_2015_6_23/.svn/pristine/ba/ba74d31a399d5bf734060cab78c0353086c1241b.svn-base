@@ -1,0 +1,105 @@
+package com.xrml.kuaican.activity;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ListView;
+
+import com.xrml.kuaican.R;
+import com.xrml.kuaican.fragment.MainTabFragment;
+import com.xrml.kuaican.net.GetCurrLocation;
+
+/**
+ * @author Administrator
+ *	得到当前城市名称
+ */
+public class CityPosition extends Activity {
+
+	private ListView lv_all_city;
+	private ListView lv_curr_city;
+	private ImageButton cityPositionBack;
+	private GetCurrLocation currLocation;
+	String[] currCityName;
+	Handler handler = new Handler()
+	{
+		public void handleMessage(android.os.Message msg) {
+			String cityName = (String) msg.obj;
+			currCityName = new String[]{cityName.substring(0, cityName.length()-1)};
+			setAdapter(currCityName);
+			
+		}
+
+		
+	};
+	private void setAdapter(String[] currCityName) {
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+				R.layout.item_city_list, currCityName);
+		lv_curr_city.setAdapter(adapter1);
+		currLocation.stopListener();
+	};
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.city_position);
+
+		currLocation = new GetCurrLocation(getApplicationContext(),handler);
+		lv_curr_city = (ListView) findViewById(R.id.lv_curr_city);
+		lv_all_city = (ListView) findViewById(R.id.lv_all_city);
+		cityPositionBack = (ImageButton) findViewById(R.id.city_position_back);
+		cityPositionBack.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				onBackPressed();
+			}
+		});
+		// 设置当前城市名称
+		/*final String[] currCityName = new String[1];
+		currCityName[0] = currLocation.getCityName();
+		if (currCityName[0] != null) {
+			ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+					R.layout.item_city_list, currCityName);
+			lv_curr_city.setAdapter(adapter1);
+			currLocation.stopListener();
+		}*/
+		lv_curr_city.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				MainTabFragment.btn_main_tab_chooseLocat
+						.setText(currCityName[position]);
+				onBackPressed();
+			}
+		});
+		// 设置全部城市名称
+		final String[] allCityName = getAllCityName();
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
+				R.layout.item_city_list, allCityName);
+		lv_all_city.setAdapter(adapter2);
+		lv_all_city.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				MainTabFragment.btn_main_tab_chooseLocat
+						.setText(allCityName[position]);
+				onBackPressed();
+			}
+		});
+	}
+
+	// 得到全部城市名称
+	private String[] getAllCityName() {
+		String[] allCityName = { "北京", "天津", "上海", "深圳", "青岛" };
+		return allCityName;
+	}
+
+}

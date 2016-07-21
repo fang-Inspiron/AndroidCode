@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/order_high_to_low"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/high_to_low"/>
+	<item
+        android:id="@+id/order_low_to_high"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/low_to_high"/>
+</menu>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="107px"
+        android:background="@color/orange_light"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/city_position_back"
+            android:layout_width="27px"
+            android:layout_height="48px"
+            android:layout_marginLeft="37px"
+            android:layout_marginTop="31px"
+            android:background="@drawable/shouye_03" />
+
+        <TextView
+            android:id="@+id/tv_city_position_chengshidingwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28px"
+            android:layout_marginLeft="10px"
+            android:text="定位城市"
+            android:textColor="@color/white"
+            android:textSize="40px" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_tv_curr_city"
+        android:layout_width="fill_parent"
+        android:layout_height="75px"
+        android:background="@color/hui_back"
+        android:paddingLeft="50px"
+        android:paddingTop="20px"
+        android:text="当前城市"
+        android:textSize="28px" />
+	<ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+    <ListView 
+        android:id="@+id/lv_curr_city"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"/>
+	</ScrollView>
+
+    <TextView
+        android:id="@+id/text_tv_all_city"
+        android:layout_width="fill_parent"
+        android:layout_height="75px"
+        android:background="@color/hui_back"
+        android:paddingLeft="50px"
+        android:paddingTop="20px"
+        android:text="全部城市"
+        android:textSize="28px" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="200px" >
+
+        <ListView
+            android:id="@+id/lv_all_city"
+            android:layout_width="fill_parent"
+            android:layout_height="200px"
+            android:background="@color/white" />
+    </ScrollView>
+
+</LinearLayout>

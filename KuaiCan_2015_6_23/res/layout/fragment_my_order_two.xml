@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_myOrderTwo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="加载中..."
+        android:textSize="25dp" />
+
+    <com.xrml.kuaican.util.ReFlashListView
+        android:id="@+id/myOrderTwoListView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="#f0f0f0"
+        android:divider="#f0f0f0"
+        android:dividerHeight="10dp"
+        android:visibility="gone" />
+
+</LinearLayout>

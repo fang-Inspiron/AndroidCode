@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">校帮</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="high_to_low">从高到低</string>
+    <string name="low_to_high">从低到高</string>
+	<string name="refer_order">提交订单</string>
+    <string name="mobile">手机</string>
+    <string name="password">密码</string>
+    <string name="string_register">登      录</string>
+    <string name="free_login">免费注册</string>
+    <string name="back_password">找回密码</string>
+    <string name="dial">一键拨打</string>
+    <string name="book_dinner">没有网络，也可订购！</string>
+	
+</resources>

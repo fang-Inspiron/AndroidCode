@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_order_adds_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/my_order_list_background"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/order_adds_userName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|left"
+            android:text="董晓军"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/order_adds_userPhone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|left"
+            android:text="18787872365"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/order_adds_changeAdd"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:background="@drawable/my_order_circle_orangelight_button"
+            android:text="修"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myOrderHasReceivedLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/order_adds_orderAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="陕西省西安市长安区西安邮电大学东区2号宿舍楼2130宿舍"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/order_adds_receiveId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|left"
+        android:text="地址ID:123456"
+        android:textSize="17sp" />
+
+</LinearLayout>

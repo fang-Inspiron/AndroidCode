@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<Button 
+	    android:id="@+id/my_order_adds_addAddress"
+	    android:layout_width="fill_parent"
+	    android:layout_height="50dp"
+	    android:layout_marginLeft="15dp"
+	    android:layout_marginRight="15dp"
+	    android:layout_marginBottom="10dp"
+	    android:text="新增地址"
+        android:textColor="#ffffff"
+	    android:textSize="40px"
+	    android:background="@drawable/my_circle_button_selector"
+	    android:layout_alignParentBottom="true"/>
+    <ListView
+        android:id="@+id/my_order_adds_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="#f0f0f0"
+        android:divider="#f0f0f0"
+        android:layout_above="@id/my_order_adds_addAddress"
+        android:dividerHeight="10dp" >
+    </ListView>
+</RelativeLayout>
